@@ -1,0 +1,50 @@
+\begin{multicols}{2}
+
+\textbf{N\'umero de factores de un n\'umero:}
+
+La factorizaci\'on prima de un n\'umero $n$ contiene a lo sumo log$_2n$ factores.\\
+\textbf{Peque\~no Teorema de Fermat:}
+
+Si $p$ es un primo y $a$ es un n\'umero natural positivo primo relativo con $p$ entonces $a^{p-1} \equiv 1$ mod $p$.\\
+\textbf{Teorema chino del residuo:}
+
+Sean $m_1,m_2,\cdots m_n$ enteros de los cuales todos son primos relativos entre s\'i. Adem\'as sean $a_1,a_2, \cdots a_n$ enteros arbitrarios. Entonces el sistema:
+\begin{center}
+$x\equiv a_1\mod m_1$\\
+$x\equiv a_2\mod m_2$\\
+$ \vdots$\\
+$x\equiv a_n\mod m_n$
+\end{center}
+tiene una \'unica soluci\'on m\'odulo $m=m_1m_2\cdots m_n$\\
+\textbf{Funci\'on Phi de Euler:}
+
+La funci\'on $\phi (n)$ denota el n\'umero de enteros en $\{1,2,\cdots ,n\}$ que son primos relativos a $n$. 
+\begin{itemize}
+\item Si $a$ y $b$  son primos relativos entonces $\phi(ab)=\phi(a)\phi(b)$
+\item Si $p$ es un primo entonces $\phi(p^k)=p^k-p^{k-1}$.
+\end{itemize} \\
+
+\textbf{N\'umero de primos hasta $n$:}
+
+Sea $\pi(n)$ el n\'umero de primos entre $1,2,\cdots ,n$. Entonces $\pi(n)\sim \frac{n}{\ln(n)}$
+
+\end{multicols}
+\subsection{Algoritmo euclidiano}
+	\algoritmo{./number_theory/al-euclid}
+\pagebreak
+\subsection{Algoritmo euclidiano extendido}
+	\algoritmo{./number_theory/al-extended-euclid}
+\subsection{Como resolver ecuaciones lineales modulares}
+	\algoritmo{./number_theory/al-modular-eq-solver}
+\subsection{Algoritmo de exponenciaci\'on modular (Computar $b^n\mod m$)}
+	\algoritmo{./number_theory/al-mod-exp}
+\pagebreak
+\subsection{Como verificar si un n\'umero es primo}
+Algunos hechos:
+\begin{itemize}
+	\item Todos los primos mayores que $3$ pueden escribirse en la forma $6k+/-1$
+	\item Cualquier n\'umero $n$ puede tener solamente un factor primo mayor a $\sqrt{n}$
+\end{itemize}
+	\algoritmo{./number_theory/al-is-prime}
+\subsection{Conseguir los divisores de los primeros $n$ n\'umeros}
+	\codigofuente{./number_theory/divisores_primeros_n_numeros.java}

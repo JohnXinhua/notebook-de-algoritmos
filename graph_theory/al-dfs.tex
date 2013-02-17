@@ -1,0 +1,17 @@
+  \SetKw{each}{each}
+
+  \Input{Un grafo conexo $G=(V,E)$ (y opcionalmente un nodo $v_{0} \in V$ desde el que comenzar).}
+  \Output{El n\'umero de vertices que satisfacen la propiedad $P$.}
+
+  Inicializa un stack $S$\;
+  $Push(S,v_0)$\;
+  \While{$S$ no este vac\'ia}{
+    $v \gets Pop(S)$\;
+    Colorear $v$\;
+    \For{cada vecino $u$ de $v$}{
+      \If{ $u$ no esta coloreado}{
+        $Push(S,u)$\;
+      }
+    }
+   }
+ \caption{\textsc{DFS}($G$)}

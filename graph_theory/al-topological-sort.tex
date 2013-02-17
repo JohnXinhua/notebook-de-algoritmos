@@ -1,0 +1,22 @@
+	\SetKwFunction{Remove}{Remove}\SetKwFunction{Add}{Add}\SetKwFunction{adj}{adj}
+	\SetKw{each}{each}
+
+	\Input{Un grafo dirigido sin ciclos $G=(V,E)$.}
+	\Output{Un ordenamiento topol\'ogico de $G$}
+
+	Inicializar una cola $Q$\;
+	Inicializar un arreglo $A$ (el ordenamiento)\;
+	Computar un arreglo $id[1,2,\cdots ,|V|]$ que indica el \textit{in degree} (grado de entrada) de cada v\'ertice.\;
+	Agregar a la cola los $v\in V$ tales que $id[v]=0$\;
+	\While{$Q$ no vac\'ia}{
+		$u\gets Q.$\Remove()\;
+		$A.$\Add{$u$}\;
+		\For{\each $v \in$ \adj{$u$}}{
+			$id[v]=id[v]-1$\;			
+			\If{$id[v]=0$}{
+				$Q.$\Add{$v$}\;
+			}
+		}
+	}
+	\Return $A$\;
+	\caption{\textsc{Topological-Sort}($G$), Complejidad:$O(|V|+|E|)$}

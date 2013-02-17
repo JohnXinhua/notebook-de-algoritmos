@@ -1,0 +1,18 @@
+  \SetKwFunction{Length}{Length}\SetKwFunction{perm}{-\'esima permutaci\'on lexicogr\'afica}
+
+  \Input{Una palabra $L$ (Un arreglo de car\'acteres) y un valor $n \in \mathbb{N} , 1 \leq n \leq$ \Length{$L$}$!$.}
+  \Output{La n-sima permutaci\'on de $L$.}
+
+  \If{\Length{$L$}$=1$}{
+    \Return $L$\;
+  }{
+    $a \gets$ $($\Length{$L$}$-1)!$\;
+    \For{$i \gets 1$ \KwTo \Length{$L$}}{
+      \If{$a\cdot i+1\leq$ $n \leq a\cdot (i+1)$}{
+        $p \gets L[$ $i$ $]$\;
+        \textbf{remove} $L[$ $i$ $]$ \textbf{from} $L$\;
+        \Return $p$ concatenado con $(n-ia)$\perm{$L$}\:
+      }
+    }
+  }
+ \caption{\textsc{$n$-\'esima permutaci\'on lexicogr\'afica}($L,n$),Complejidad:$O(n^2)$}

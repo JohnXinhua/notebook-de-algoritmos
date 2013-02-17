@@ -1,0 +1,13 @@
+  \SetKwFunction{ExtendedGCD}{Extended-GCD}
+  
+  \Input{$a,b \in \mathbb{N}$, por lo menos uno de ellos distinto de cero.}
+  \Output{El m\'aximo com\'un divisor $d$ de $a$ y $b$ y los valores de $x$ y $y$ tales que $d=ax + by$.}
+
+  \BlankLine
+   \If{$b=0$}{
+    \Return $(a,1,0)$\;
+  }
+  $(d',x',y') \gets$ \ExtendedGCD{$b, a$ $(mod$ $b)$}\;
+  $(d,x,y) \gets (d',y',x' - \lfloor a/b \rfloor)\cdot y'$\;
+  \Return $(d,x,y)$\;
+  \caption{\textsc{Extended-GCD}($a,b$), Complejidad: $O($Log$(a)+$Log$(b))$}

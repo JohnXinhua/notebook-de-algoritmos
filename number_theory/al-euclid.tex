@@ -1,0 +1,12 @@
+  \SetKwFunction{GCD}{GCD}
+  
+  \Input{$a,b \in \mathbb{N}$, por lo menos uno de ellos distinto de cero.}
+  \Output{El m\'aximo com\'un divisor de $a$ y $b$.}
+
+  \BlankLine
+  \eIf{$b=0$}{
+    \Return $a$\;
+  }{
+    \Return \GCD{$b, a$ $(mod$ $b)$}\;
+  }
+  \caption{\textsc{GCD}($a,b$), Complejidad: $O($Log$(a)+$Log$(b))$}

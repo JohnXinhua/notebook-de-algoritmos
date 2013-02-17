@@ -1,0 +1,12 @@
+	\SetKwFunction{Merge}{Merge}\SetKwFunction{Mergesort}{Mergesort}
+
+	\Input{Un arreglo $X=[x_{1},x_{2},\cdots,x_{n-1},x_{n}]$ y  dos enteros $p$ y $r$, $1\leq$ $p$ $<$ $r$ $\leq n$ que indican un subarreglo de $X$.}
+  
+ 	\BlankLine
+	\If{$p<r$}{
+		$q \gets \lfloor (p+r)/2 \rfloor$\;
+		\Mergesort{$X,p,q$}\;
+		\Mergesort{$X,q+1,r$}\;
+		\Merge{$X,p,q,r$}\;
+	}
+	\caption{\textsc{Mergesort}($X,p,r$), Complejidad: $O(n$Log$(n))$}

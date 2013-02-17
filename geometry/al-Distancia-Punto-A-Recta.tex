@@ -1,0 +1,14 @@
+  \SetKwFunction{dep}{Distancia-Entre-Puntos}
+  \SetKw{Or}{or}
+
+  \Input{El punto $P$ que se quiere evaluar y dos puntos $P_1$ y $P_2$ que estan dentro de la recta. $P_1 \neq P_2$.}
+  \Output{La menor distancia del punto a la recta.}
+
+  \BlankLine
+  $m \gets \frac{P_{2y}-P_{1y}}{P_{2x}-P_{1x}}$\;
+  $m' \gets -\frac{1}{m}$\;
+  $b \gets P_{1y}-mP_{1x}$\;
+  $b' \gets P_y-m'P_x$\;
+  $P'\gets (\frac{b'-b}{m-m'},mx+b)$\;
+  \Return \dep{$P,P'$}\;
+ \caption{\textsc{Distancia-Punto-A-Recta}($P,P_1,P_2$)}

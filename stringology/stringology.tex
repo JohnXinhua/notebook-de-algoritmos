@@ -1,0 +1,5 @@
+Dado un arreglo de texto $T[1,2,\cdots ,n]$ de longitud $n$ se desea saber si un patr\'on $P[1,2,\cdots ,m]$ de longitud $m\leq n$ es una subcadena de $T$.
+\subsection{Algoritmo de Rabin-Karp}
+Idea: interpretar cada una de las subcadenas de longitud $m$ de $T$ (Son aquellas $T[s+1,s+2,\cdots ,s+m]$ para $s=0,1,\cdots ,n-m$) como un n\'umero en base $d=|\Sigma|$. Sin embargo, siendo el tama\~{n}o del alfabeto muy grande los n\'umeros se vuelven inmanejables por lo que se propone utilizar los n\'umeros m\'odulo un $q$ primo. El primo $q$ deber\'ia ser elegido de forma que $q\cdot d$ apenas quepa en una palabra del computador. A\'un as\'i pueden haber "coincidencias espurias": cuando los n\'umeros son distintos definitivamente el patr\'on no coincide pero si son iguales no se puede afirmar que el patr\'on ocurra. Esto sucede debido a que $t_s \equiv p \mod q$ no implica $t_s=p$. Por eso se hace necesario verificarlo expl\'icitamente.
+	\algoritmo{./stringology/al-rabin-karp}
+Los sub\'indices de $t$ estan por claridad. Se pueden quitar.

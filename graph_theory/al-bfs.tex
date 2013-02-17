@@ -1,0 +1,22 @@
+  \SetKwFunction{BFS}{BFS}
+  \SetKw{each}{each}
+
+  \Input{Un grafo conexo $G=(V,E)$ (y opcionalmente un nodo $v_{0} \in V$ desde el que comenzar). Una propiedad $P$ a probar.}
+  \Output{El n\'umero de vertices que satisfacen la propiedad $P$.}
+
+  \BlankLine
+  Inicializar una cola $Q$ de vertices que no han sido visitados, que en principio contenga al vertice raiz $v_{0}$.\;
+  Crear una lista $T$,inicialmente vacia, de vertices ya visitados.\;
+  $cont \gets 0$\;
+  \For{\each $w \in Q$}{
+    \If{$P(w)$}{
+      $cont \gets cont+1$\;
+    }
+    Agregar a $Q$ todos los vecinos de $w$ que no esten en $T$.\;
+    Quitar de $Q$ todos los vertices $w$ que han sido visitados.\;
+    Agregar $w$ a $T$.\;
+    \If{$T=V$}{
+      \Return $cont$\;
+    }
+  }
+ \caption{\textsc{BFS}($G$), Complejidad: $O(|V|+|E|)$}

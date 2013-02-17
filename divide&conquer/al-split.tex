@@ -1,0 +1,21 @@
+  \SetKwFunction{Split}{Split}
+
+  \Input{Un arreglo $X=[x_{1},x_{2},\cdots,x_{n-1},x_{n}]$ y  dos enteros $left$ y $right$, $1\leq$ $left$ $<$ $right$ $\leq n$ que indican un pedazo de $X$.}
+  \Output{La posici\'on $i$ del pivote.}
+
+  \BlankLine
+  $L \leftarrow$ \emph{N\'umero al azar en el intervalo $[$ $left,right$ $]$}\;
+  \tcc{$L$ es la posici\'on del pivote}
+  $X[$ $left$ $] \leftrightarrow X[$ $L$ $]$\;
+  $T \gets X[$ $left$ $]$\;
+  \tcc{$T$ es el valor del pivote}
+  $i \gets$ $left$\;
+  \For{$j \gets$ $left+$ $1$ \KwTo $right$}{
+    \If{$X[$ $j$ $]<T$}{
+      $i \gets i+1$\;
+      $X[$ $i$ $]\leftrightarrow X[$ $j$ $]$\;
+    }
+  }
+  $X[$ $left$ $] \leftrightarrow X[$ $i$ $]$\;
+  \Return $i$\;
+  \caption{\textsc{Split}($X,left,right$), Complejidad $O(n)$}

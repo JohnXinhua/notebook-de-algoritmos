@@ -1,0 +1,28 @@
+	\SetKwFunction{Length}{Length}\SetKw{Print}{print}
+	
+	\Input{Dos cadenas $T$ y $P$, el tama\~{n}o del alfabeto $d$ y un primo $q$ adecuado.}
+	\Output{Imprime las ocurrencias del patr\'on $P$ en $T$.}
+	
+	$m \gets P.$\Length\;
+	$n \gets T.$\Length\;
+	\tcc{Constante para calcular el siguiente $t_s$}
+	$h \gets d^{m-1} \mod q$\;
+	$p \gets 0$\;
+	$t_0 \gets 0$\;
+	\tcc{Preprocesamiento}
+	\For{$i\gets 1$ \KwTo $m$}{
+		$p\gets (d\cdot p + P[i]) \mod q$\;
+		$t_0\gets (d\cdot t_0 + T[i]) \mod q$\;
+	}
+	\tcc{Matching}
+	\For{$s\gets 0$ \KwTo $n-m$}{
+		\If{$p=t_s$}{
+			\If{$P[1\cdots m]=T[s+1\cdots s+m]$}{
+				\Print "El patr\'on ocurre en " $s$\;
+			}
+		}
+		\If{$s<n-m$}{
+			$t_{s+1}\gets (d(t_s-T[s+1]h)+T[s+m+1])\mod q$\;
+		}
+	}
+	\caption{Rabin-Karp-Matcher($T,P,d,q$), Complejidad:$\Theta((n-m+1)m)$}

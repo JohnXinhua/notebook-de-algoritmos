@@ -1,0 +1,24 @@
+  \SetKwFunction{partition}{Randomized-Partition}\SetKwFunction{select}{Randomized-Select}
+  \SetKwInOut{Input}{Input}
+
+  \Input{Un arreglo $X[1,2,\cdots ,n-1,n]$ y  tres enteros $p$, $r$ e $i$.}
+  \Output{El $i$-\'esimo elemento del arreglo $X[p,\cdots,r]$ cuando se encuentra ordenado.}
+
+	\BlankLine
+	
+	\eIf{$p=r$}{
+		\Return $X[p]$\;
+	}{
+		$q \gets $\partition$(X,p,r)$\;
+		$k \gets q-p+1$\;
+		\uIf{$i=k$}{
+			\Return $X[q]$\;
+		}
+		\uElseIf{$i<k$}{
+			\Return \select$(X,p,q-1,i)$\;
+		}
+		\uElse{
+			\Return \select$(X,q+1,r,i-k)$\;
+		}
+	}
+	\caption{\textsc{Randomized-Select}($X,p,r,i$), Complejidad esperada: $\Theta(n)$}

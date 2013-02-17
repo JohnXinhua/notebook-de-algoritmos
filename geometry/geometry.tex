@@ -1,0 +1,53 @@
+\begin{multicols}{2}
+\imagen{40mm}{./geometry/convex_hull.png}
+\subsection{Hechos y teoremas \'utiles}
+\textbf{En un tri\'angulo:}
+\begin{center}
+	Ley de Senos: 
+		\[\frac{a}{Sen(A)}=\frac{b}{Sen(B)}=\frac{c}{Sen(C)}\]
+	Ley de Cosenos:
+	\[a^2=b^2+c^2-2bc\cdot Cos(A)\]
+\end{center}
+\textbf{\'Angulo entre dos vectores:}
+	\[Cos(\theta)=\frac{\vec{u}\cdot\vec{v}}{|\vec{u}|\cdot|\vec{v}|}\]
+\textbf{Producto cruz:}
+
+La magnitud del producto cruz de dos vectores $\vec{p_1}$ y $\vec{p_2}$ es el area del paralelogramo generado por ambos puntos, el origen y el punto $\vec{p_1}+\vec{p_2}$. En $\mathbb{R}^2$ el producto cruz es:
+	\[\vec{p}_1\times\vec{p}_2=(x_1,y_1)\times(x_2,y_2)=x_1y_2-x_2y_1\]
+Si $\vec{p_1}\times \vec{p_2}>0$ entonces el giro de $\vec{p_1}$ a $\vec{p_2}$ es en sentido de las manecillas del reloj. Si $\vec{p_1}\times \vec{p_2}<0$ entonces el sentido es contrario al de las manecillas del reloj. Si es igual a cero entonces $\vec{p_1}$ y $\vec{p_2}$ son colineales.\\
+\textbf{Area y centroide:}
+
+Para un pol\'igono simple (que no tiene segmentos de l\'inea que se intersectan) el area y centroide son:
+\begin{align*}
+	A &= \frac{1}{2}\sum\limits^{n-1}_{i=0}(x_iy_{i+1}-x_{i+1}y_i)\\
+	C_x &= \frac{1}{6A}\sum\limits^{n-1}_{i=0}(x_i+x_{i+1})(x_iy_{i+1}-x_{i+1}y_i)\\
+	C_y &= \frac{1}{6A}\sum\limits^{n-1}_{i=0}(y_i+y_{i+1})(x_iy_{i+1}-x_{i+1}y_i)
+\end{align*}
+\textbf{Teorema de Pick:}
+
+Dado un pol\'igono simple construido en una rejilla de puntos equidistantes, tales que todos los vertices del pol\'igono son puntos en la rejilla, el teorema de Pick provee una f\'ormuka para calcular el area $A$ del pol\'igono en t\'erminos del n\'umero $i$ de puntos en el interior del pol\'igono y el n\'umero $b$ de puntos en el per\'imetro del pol\'igono:
+\[A=i+\frac{b}{2}-1\]
+\textbf{Intersecci\'on entre dos rectas dadas por cuatro puntos $P_1$$=$$(x_1,y_1)$, $P_2$$=$$(x_2,y_2)$, $P'_1$$=$$(x'_1,y'_1)$ y $P'_2$$=$$(x'_2,y'_2)$:}
+\begin{align*}
+  m := \frac{y_2-y_1}{x_2-x_1} \quad 
+  b &:= y_1-mx_1 \\
+  m':= \frac{y'_2-y'_1}{x'_2-x'_1} \quad 
+  b'&:= y'_1-m'x'_1\\\\
+  x =\frac{b'-b}{m-m'} \quad
+  y &=mx+b
+\end{align*}
+\subsection{Determinar si dos segmentos de recta consecutivos realizan un giro a izquierda o a derecha}
+Teniendo dos segmentos de recta $\overline{p_0p_1}$	y $\overline{p_1p_2}$ queremos saber si el giro en $p_1$ es a izquierda o a derecha. Para esto se puede utilizar el producto cruz:
+\imagen{70mm}{./geometry/turn.png}
+Si se computa el producto cruz $(\vec{p_2}-\vec{p_0})\times (\vec{p_1}-\vec{p_0})$ y da negativo entonces el giro es en contra de las manecillas del reloj y por lo tanto hacia la izquierda. 
+\end{multicols}
+\pagebreak
+\subsection{Distancia de un punto a un segmento}
+	\algoritmo{./geometry/al-distancia-punto-a-segmento}
+\subsection{Distancia de un punto a una recta}
+	\algoritmo{./geometry/al-distancia-punto-a-recta}
+\subsection{Computar el \textit{convex hull}}
+Dado un conjunto $Q$ de puntos su \textit{convex hull} es el pol\'igono $P$ mas peque\~{n}o tal que todo punto se encuentra en el borde o dentro de $P$.
+\subsubsection{Graham scan}
+	\algoritmo{./geometry/al-graham-scan}
+\pagebreak

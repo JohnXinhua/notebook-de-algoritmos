@@ -1,0 +1,16 @@
+	\SetKwFunction{dist}{Distancia-Entre-Puntos}\SetKwFunction{Min}{Min}\SetKwFunction{dar}{Distancia a recta}
+	\SetKw{Or}{or}
+
+  \Input{El punto $P$ que se quiere evaluar y los dos puntos extremos $P_1$ y $P_2$ del segmento de recta.}
+  \Output{La menor distancia del punto al segmento de recta}
+
+  \BlankLine
+  $d \gets$ \dist{$P_1,P_2$}\;
+  $d_1 \gets$ \dist{$P_1,P$}\;
+  $d_2 \gets$ \dist{$P_2,P$}\;
+  \eIf{$d+d_2 < d_1$ \Or $d+d_1<d_2$}{
+    \Return  \Min{$d_1,d_2$}\;
+  }{
+    \Return  \dar{$P,P_1,P_2$}
+}
+ \caption{\textsc{Distancia-Punto-a-Segmento}($P,P_1,P_2$)}

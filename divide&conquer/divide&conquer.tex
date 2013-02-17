@@ -1,0 +1,73 @@
+\begin{multicols}{2}
+\subsection{Pasos de un algoritmo de dividir y conquistar}
+\begin{enumerate}
+	\item \textbf{Dividir:} Dividir el problema en instancias m\'as peque\~{n}as del mismo problema.
+	\item \textbf{Conquistar:} Resolver recursivamente cada subproblema.
+	\item \textbf{Combinar:} Juntar las respuestas parciales
+\end{enumerate}
+Un algoritmo de este tipo tendr\'a una complejidad:
+\begin{center} $T(n)=aT(n/b)+f(n)$ \end{center}
+donde $a$ es el n\'umero de problemas m\'as peque\~{n}os que se resuelven recursivamente, $b$ es la fracci\'on del problema original que se resuelve en un suproblema y $f(n)$ es lo que cuesta combinar las respuestas.
+\subsection{El teorema maestro}
+Sean $a\geq 1$ y $b>1$ constantes, sea $f(n)$ una funci\'on y sea $T(n)$ una funci\'on en los enteros no negativos definida por la recurrencia:
+\begin{center} $T(n)=aT(n/b)+f(n)$ \end{center}
+donde $n/b$ puede interpretarse como $\lfloor n/b \rfloor$ o $\lceil n/b \rceil$. Entonces $T(n)$ puede ser acotada asint\'oticamente as\'i:
+\begin{enumerate}
+	\item Si $f(n)= O(n^{log_ba-\epsilon})$ para alguna constante $\epsilon>0$ entonces \\$T(n)=\Theta(n^{log_ba})$.
+	\item Si $f(n)= \Theta(n^{log_ba})$ entonces $T(n)=\Theta(n^{log_ba}$Lg$(n))$.
+	\item Si $f(n)= \Omega(n^{log_ba+\epsilon})$ para alguna constante $\epsilon>0$ y si $af(n/b)\leq cf(n)$ para alguna constante $c<1$ y un $n$ lo suficientemente grande, entonces $T(n)=\Theta(f(n))$.
+\end{enumerate}
+\subsection{N\'umeros Fibonacci}
+Aprovechando la identidad 
+\[
+\begin{pmatrix}
+  F_{n+1} & F_n \\
+  F_n & F_{n-1}
+\end{pmatrix}
+ =
+\begin{pmatrix}
+  1 & 1 \\
+  1 & 0
+\end{pmatrix}^n
+\]
+y el algoritmo de dividir y conquistar para exponenciaci\'on se puede obtener el $n$-\'esimo n\'umero fibonacci en tiempo logaritmico.
+\subsection{Algoritmo de Strassen (Multiplicaci\'on de matrices)}
+Para obtener el producto de dos matrices $AB=C$, donde $A,B$ y $C$ son matrices $n\times n$, asumiendo que $n$ es una potencia exacta de $2$, cada matriz se puede dividir en cuatro matrices $n/2\times n/2$. Entonces la ecuaci\'on $AB=C$ se puede reescribir como:
+\[
+\begin{pmatrix}
+  a & b \\
+  c & d
+\end{pmatrix}
+\begin{pmatrix}
+  e & f \\
+  g & h
+\end{pmatrix}
+=
+\begin{pmatrix}
+  r & s \\
+  t & u
+\end{pmatrix}
+\]
+\begin{align*}
+P_1 = & a(f-h) & P_5 = & (a+d)(e+h) \\
+P_2 = & (a+b)h & P_6 = & (b-d)(g+h) \\
+P_3 = & (c+d)e & P_7 = & (a-c)(e+f) \\
+P_4 = & d(g-e) & \\ \\
+r = & P_5+P_4-P_2+P_6 & t = & P_3+P_4 \\
+s = & P_1+P_2 & u = & P_5+P_1-P_3-P_7
+\end{align*}
+Se realizan $7$ multiplicaciones de matrices $n/2\times n/2$. La suma de matrices toma tiempo proporcional a $n^2$. Por lo tanto tenemos que $T(n)=7T(n/2)+\Theta(n^2)=\Theta(n^{lg7})$
+\end{multicols}
+\pagebreak
+\subsection{Algoritmos de ordenamiento}
+	\subsubsection{Mergesort}
+		\algoritmo{./divide&conquer/al-merge}
+		\algoritmo{./divide&conquer/al-mergesort}
+	\pagebreak
+	\subsubsection{Quicksort}
+		\algoritmo{./divide&conquer/al-split}
+		\algoritmo{./divide&conquer/al-quicksort}
+\pagebreak
+\subsection{Encontrar en tiempo lineal el $i$-\'esimo menor elemento de un conjunto}
+	El algoritmo \textsc{Randomized-Partition} es el mismo \textsc{Split} que utiliza \textsc{Quicksort}.
+	\algoritmo{./divide&conquer/al-randomized-select}

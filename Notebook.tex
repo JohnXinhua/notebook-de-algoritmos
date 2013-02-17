@@ -1,0 +1,105 @@
+\documentclass{article}
+\usepackage[cm]{fullpage}
+\usepackage[vlined,boxed,commentsnumbered]{algorithm2e}
+\usepackage{multicol}
+\usepackage{url}
+\usepackage{amsmath,amsthm,amssymb}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{fancyvrb}
+\usepackage{multirow}
+
+\newcommand{\codigofuente}[1]{
+	\lstinputlisting[language=Java]{#1}
+}
+
+\newcommand{\seccion}[2]{
+\section{#1}					% #1 es el nombre de la seccion
+	\input{#2}					% #2 es la ruta del archivo
+}
+
+\lstset{ %
+language=Java,                % the language of the code
+basicstyle=\footnotesize,       % the size of the fonts that are used for the code
+}
+
+\newcommand{\imagen}[2]{
+\begin{center}
+	\includegraphics[width=#1]{#2}
+\end{center}
+}
+
+
+
+\newcommand{\algoritmo}[1]{
+\begin{algorithm}
+	\DontPrintSemicolon
+	\LinesNumbered
+	\SetFuncSty{textsc}
+
+	\SetKwInOut{Input}{Entrada}\SetKwInOut{Output}{Salida}
+	\SetKw{KwDownTo}{down to}\SetKw{KwTo}{to}
+	
+	\input{#1}
+\end{algorithm}
+}
+
+\renewcommand{\refname}{Bibliograf\'ia:}
+\renewcommand{\contentsname}{Tabla de contenidos:}
+\SetAlgorithmName{Algoritmo}{Lista de algoritmos}
+
+\setlength{\columnsep}{0.25in}
+\setlength{\columnseprule}{1px}
+
+\author{}
+\title{Notebook de maratones \\
+\includegraphics[width=30mm]{logo.png} }
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+\begin{itemize}
+	\item La instrucci\'on de asignaci\'on se denota por el s\'imbolo $\leftarrow$.
+	\item El intercambio de dos variables (\textsl{swap} en ingl\'es) se denota por el s\'imbolo $\leftrightarrow$.
+	\item Los \'indices de los arreglos inician en 1. Es decir si $L$ es un arreglo, entonces su primer elemento es se\~nalado por $L[1]$ y en consecuencia su \'ultimo elemento ser\'a $L[$\textsc{Length}$(L)]$.
+\end{itemize}
+
+\pagebreak
+
+\seccion{Temas b\'asicos}{./basics_and_format/basics_and_format}
+\seccion{Dividir y conquistar}{./divide&conquer/divide&conquer}
+\seccion{Estructuras de datos}{./ds/ds}
+\seccion{Teor\'ia de n\'umeros}{./number_theory/number_theory}
+\seccion{Programaci\'on din\'amica}{./dp/dp}          
+\seccion{Grafos}{./graph_theory/graph_theory}
+\seccion{Geometr\'ia computacional}{./geometry/geometry}
+\seccion{\textit{String matching}}{./stringology/stringology}
+\seccion{Combinatoria}{./combinatory/combinatory}
+\seccion{Probabilidad y estad\'istica}{./probability/probability}
+\seccion{\'Algebra lineal}{./linear_algebra/linear_algebra}
+\seccion{Otros}{./others/others}
+
+\pagebreak
+
+\begin{thebibliography}{9}
+
+\bibitem{introductionToAlgorithms}
+  Thomas H. Cormen, Charles E. Leiserson, Ronald L. Rivest, Stein Clifford,
+  \textit{Introduction to Algorithms},
+  Segunda edici\'on. MIT Press, 2003.
+
+\bibitem{algorithmsAndComplexity}
+  Herbert S. Wilf,
+  \textit{Algorithms and complexity},
+  Segunda edici\'on. A K Peters , 2002.
+
+\bibitem{algorithmicGraphTheory}
+  David Joyner, Minh Van Nguyen, Nathan Cohen,
+  \textit{Algorithmic Graph Theory},
+  Versi\'on 0.3. Recuperado el 30 de marzo de 2010 de \url{http://code.google.com/p/graph-theory-algorithms-book/}
+
+\end{thebibliography}
+
+\end{document}

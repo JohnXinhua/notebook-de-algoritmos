@@ -1,0 +1,12 @@
+  \SetKwFunction{prim}{Prim's-Algorithm}
+
+  \Input{Un grafo $G=(V,E)$ con costos.}
+  \Output{Un MST $T$ de $G$.}
+
+  \BlankLine
+  Inicializar el \'arbol $T=(V_T,E_T)$. $V_T=\{v_0\}$ donde $v_0$ es un vertice arbitrario. $E_T=\emptyset$.\;
+  \While{$V_T \neq V$}{
+    Elegir el arco $(u,v)$ de peso m\'inimo tal que $u$ este en $V_T$ pero no $v$.\;
+    Agregar $v$ a $V_T$ y $(u,v)$ a $E_T$.\;
+  }
+ \caption{\textsc{Prim}($G$)}

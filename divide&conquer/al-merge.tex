@@ -1,0 +1,29 @@
+  \SetKwFunction{merge}{Merge}\SetKwFunction{length}{Length}
+  \SetKwInOut{Input}{Input}
+
+  \Input{Un arreglo $X=[x_{1},x_{2},\cdots,x_{n-1},x_{n}]$ y  tres enteros $p$, $q$ y $r$ que indican dos subarreglos de $X$.}
+
+  \BlankLine
+  $n_1 \gets q-p+1$\;
+  $n_2 \gets r-q$\;
+  Inicializar los arreglos $L$ y $R$. \length{$L$}$=n_1+1$ y \length{$R$}$=n_2+1$\;
+  \For{$i \gets 1$ \KwTo $n_1$}{
+    $L[i] \gets X[p+i-1]$\;
+  }
+  \For{$i \gets 1$ \KwTo $n_2$}{
+    $R[i] \gets X[q+i]$\;
+  }
+  $L[n_1+1]\gets \infty$\;
+  $R[n_2+1]\gets \infty$\;
+  $i \gets 1$\;
+  $j \gets 1$\;
+  \For{$k \gets p$ \KwTo $r$}{
+    \eIf{$L[i] \leq R[j]$}{
+      $X[k] \gets L[i]$\;
+      $i \gets i+1$\;
+    }{
+      $X[k] \gets R[j]$\;
+      $j \gets j+1$\;
+    }
+  }
+  \caption{\textsc{Merge}($X,p,q,r$), Complejidad: $O(n)$}

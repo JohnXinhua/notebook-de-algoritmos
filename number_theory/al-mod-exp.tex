@@ -1,0 +1,15 @@
+  \Input{$b,n,m \in \mathbb{Z}$}
+  \Output{$b^n\mod m$}
+
+  \BlankLine
+  Computar la representaci\'on binaria de $n=(a_{k-1},\cdots a_1,a_0)$\;
+  $x\gets 1$\;
+  $potencia \gets b\mod m$\;
+  \For{$i\gets 0$ \KwTo $k-1$}{
+    \If{$a_i=1$}{
+      $x\gets (x\cdot potencia)\mod m$\;
+    }
+    $potencia\gets (potencia\cdot potencia)\mod m$\;
+  }
+  \Return $x$\;
+  \caption{\textsc{Mod-exp}($b,n,m$), Complejidad (bits): $O(($Log$^2(m))$Log$(n))$}

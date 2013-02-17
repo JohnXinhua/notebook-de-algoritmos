@@ -1,0 +1,54 @@
+\contentsline {section}{\numberline {1}Temas b\'asicos}{3}
+\contentsline {subsection}{\numberline {1.1}Tama\~{n}os de tipos b\'asicos}{3}
+\contentsline {subsection}{\numberline {1.2}Precisi\'on hasta $x$ cifras decimales}{3}
+\contentsline {section}{\numberline {2}Dividir y conquistar}{3}
+\contentsline {subsection}{\numberline {2.1}Pasos de un algoritmo de dividir y conquistar}{3}
+\contentsline {subsection}{\numberline {2.2}El teorema maestro}{3}
+\contentsline {subsection}{\numberline {2.3}N\'umeros Fibonacci}{3}
+\contentsline {subsection}{\numberline {2.4}Algoritmo de Strassen (Multiplicaci\'on de matrices)}{3}
+\contentsline {subsection}{\numberline {2.5}Algoritmos de ordenamiento}{5}
+\contentsline {subsubsection}{\numberline {2.5.1}Mergesort}{5}
+\contentsline {subsubsection}{\numberline {2.5.2}Quicksort}{6}
+\contentsline {subsection}{\numberline {2.6}Encontrar en tiempo lineal el $i$-\'esimo menor elemento de un conjunto}{7}
+\contentsline {section}{\numberline {3}Estructuras de datos}{7}
+\contentsline {subsection}{\numberline {3.1}Heaps}{7}
+\contentsline {section}{\numberline {4}Teor\'ia de n\'umeros}{8}
+\contentsline {subsection}{\numberline {4.1}Algoritmo euclidiano}{8}
+\contentsline {subsection}{\numberline {4.2}Algoritmo euclidiano extendido}{9}
+\contentsline {subsection}{\numberline {4.3}Como resolver ecuaciones lineales modulares}{9}
+\contentsline {subsection}{\numberline {4.4}Algoritmo de exponenciaci\'on modular (Computar $b^n\penalty \z@ \mkern 12mu{\mathgroup \symoperators mod}\tmspace +\thinmuskip {.1667em}\tmspace +\thinmuskip {.1667em}m$)}{9}
+\contentsline {subsection}{\numberline {4.5}Como verificar si un n\'umero es primo}{10}
+\contentsline {subsection}{\numberline {4.6}Conseguir los divisores de los primeros $n$ n\'umeros}{10}
+\contentsline {section}{\numberline {5}Programaci\'on din\'amica}{11}
+\contentsline {subsection}{\numberline {5.1}Partici\'on balanceada}{11}
+\contentsline {subsection}{\numberline {5.2}Subsecuencia contigua m\'axima}{11}
+\contentsline {subsection}{\numberline {5.3}Problema del mochilero (The integer (0/1) knapsack problem, duplicate items forbidden)}{11}
+\contentsline {subsection}{\numberline {5.4}M\'inima distancia de edici\'on}{11}
+\contentsline {subsection}{\numberline {5.5}Largest common subsequence (LCS)}{11}
+\contentsline {section}{\numberline {6}Grafos}{13}
+\contentsline {subsection}{\numberline {6.1}Hechos y teoremas:}{13}
+\contentsline {subsection}{\numberline {6.2}Breadth-first Search}{13}
+\contentsline {subsection}{\numberline {6.3}Depth-first Search}{14}
+\contentsline {subsection}{\numberline {6.4}Algoritmo de Prim}{14}
+\contentsline {subsection}{\numberline {6.5}Algoritmo de Dijkstra}{14}
+\contentsline {subsection}{\numberline {6.6}Ordenamiento topol\'ogico:}{15}
+\contentsline {subsection}{\numberline {6.7}Componentes fuertemente conexas:}{15}
+\contentsline {section}{\numberline {7}Geometr\'ia computacional}{18}
+\contentsline {subsection}{\numberline {7.1}Hechos y teoremas \'utiles}{18}
+\contentsline {subsection}{\numberline {7.2}Determinar si dos segmentos de recta consecutivos realizan un giro a izquierda o a derecha}{18}
+\contentsline {subsection}{\numberline {7.3}Distancia de un punto a un segmento}{19}
+\contentsline {subsection}{\numberline {7.4}Distancia de un punto a una recta}{19}
+\contentsline {subsection}{\numberline {7.5}Computar el \textit {convex hull}}{19}
+\contentsline {subsubsection}{\numberline {7.5.1}Graham scan}{19}
+\contentsline {section}{\numberline {8}\textit {String matching}}{20}
+\contentsline {subsection}{\numberline {8.1}Algoritmo de Rabin-Karp}{20}
+\contentsline {section}{\numberline {9}Combinatoria}{20}
+\contentsline {subsection}{\numberline {9.1}Hechos y teoremas \'utiles}{20}
+\contentsline {subsection}{\numberline {9.2}Como generar el n\'umero de combinaciones}{21}
+\contentsline {section}{\numberline {10}Probabilidad y estad\'istica}{21}
+\contentsline {subsection}{\numberline {10.1}Hechos y teoremas \'utiles}{21}
+\contentsline {section}{\numberline {11}\'Algebra lineal}{21}
+\contentsline {subsection}{\numberline {11.1}Resolver sistemas lineales de ecuaciones:}{21}
+\contentsline {section}{\numberline {12}Otros}{23}
+\contentsline {subsection}{\numberline {12.1}Regla de Horner}{23}
+\contentsline {subsection}{\numberline {12.2}$n$-\'esima permutaci\'on lexicogr\'afica}{23}

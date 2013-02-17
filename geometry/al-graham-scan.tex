@@ -1,0 +1,20 @@
+  \SetKwFunction{Pop}{Pop} \SetKwFunction{Top}{Top} \SetKwFunction{NTP}{Next-To-Top} \SetKwFunction{Push}{Push} 
+
+  \Input{Un conjunto $Q$ de puntos en $\mathbb{R}^2$. $Q$ contiene al menos 3 puntos no colineales.}
+  \Output{Una pila que, del fondo al tope, contiene los puntos del convex hull en sentido de las manecillas del reloj.}
+
+  \BlankLine
+	Sea $p_0$ el punto con menor coordenada en $y$ o el de menor coordenada en $x$ en caso de haber empate.\;
+	Sean $<p_1,p_2,\cdots ,p_m>$ los puntos restantes en $Q$ ordenados por \'angulo polar en sentido contrario a las manecillas del reloj alrededor de $p_0$. Si hay mas de uno con el mismo \'angulo dejar solamente el que esta mas lejos de $p_0$.\;
+	Inicializar una pila $S$\;	
+	$S.$\Push{$p_0$}\;
+	$S.$\Push{$p_1$}\;
+	$S.$\Push{$p_2$}\;
+	\For{$i=3$ \KwTo $m$}{
+		\While{el \'angulo formado por los puntos $S.$\NTP{}, $S.$\Top{} y $p_i$ tenga un giro que no sea hacia la izquierda}{
+			$S.$\Pop{}\;
+		}
+		$S.$\Push{$p_i$}\;
+	}
+	\Return $S$\;
+	\caption{\textsc{Graham-Scan}($Q$), Complejidad:$O(n$Log$(n))$}

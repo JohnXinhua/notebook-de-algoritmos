@@ -1,0 +1,11 @@
+  \SetKwFunction{Split}{Split}\SetKwFunction{Quicksort}{Quicksort}
+
+  \Input{Un arreglo $X=[x_{1},x_{2},\cdots,x_{n-1},x_{n}]$ y  dos enteros $left$ y $right$, $1\leq$ $left$ $<$ $right$ $\leq n$ que indican un subarreglo de $X$.}
+  
+  \BlankLine
+  \If{$right- left \geq 1$}{
+    $i \gets$ \Split{$X,left,right$} \;
+    \Quicksort{$X,left,i-1$}\;
+    \Quicksort{$X,i+1,right$}\;
+  }
+  \caption{\textsc{Quicksort}($X,left,right$), Complejidad: $O(n$Log$(n))$}

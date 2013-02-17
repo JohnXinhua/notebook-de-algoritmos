@@ -1,0 +1,16 @@
+  \SetKwFunction{ExtendedGCD}{Extended-GCD}\SetKwFunction{modularEcuationSolver}{Modular-Linear-Equation-Solver}
+
+  \Input{$a,n \in \mathbb{N}^+$ y $b \in \mathbb{Z}$}
+  \Output{Siendo $d=gcd(a,n)$ retorna los $d$ distintos valores de $x$ tales que $ax \equiv b (mod$ $n)$.}
+
+  \BlankLine
+  $(d,x',y') \gets $\ExtendedGCD{$a,n$}\;
+  \eIf{$d$ $|$ $b$}{
+    $x_{0} \gets x'(b/d)mod$ $n$\;
+    \For{$i \gets 0$ \KwTo $d-1$}{
+      \textbf{print} $(x_{0}+i(n/d))mod$ $n$\;
+     }
+  }{
+    \textbf{print} No solutions\;
+  }
+  \caption{\textsc{Mod-eq-solv}($a,b,n$), Complejidad: $O($Log$(n)+$gcd$(a,n))$}

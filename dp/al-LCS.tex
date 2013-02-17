@@ -1,0 +1,33 @@
+  \SetKw{each}{each}
+
+  \Input{Dos secuencias $X=\langle x_1,x_2,\cdots,x_m\rangle$ y $Y=\langle y_1,y_2,\cdots,y_n\rangle$.}
+  \Output{Dos matrices $c$ (de costos )y $b$ (que permite reconstruir la LCS).}
+
+  \BlankLine
+  $m\gets length[X]$\;
+  $n\gets length[Y]$\;
+  Inicializar una matriz de enteros $c[m,n]$ y una matriz de s\'imbolos $b[m,n]$\;
+  \For{$i\gets 1$\KwTo $m$}{
+    $c[i,0]\gets 0$\;
+  }
+  \For{$i\gets 1$\KwTo $n$}{
+    $c[0,i]\gets 0$\;
+  }
+  \For{$i\gets 1$\KwTo $m$}{
+    \For{$j\gets 1$\KwTo $n$}{
+      \uIf{$x_i=x_j$}{
+        $c[i,j]\gets c[i-1,j-1]+1$\;
+        $b[i,j]\gets$ ``$\nwarrow$'' \;
+      }
+      \uElseIf{$c[i-1,j]\geq c[i,j-1]$}{
+         $c[i,j]\gets c[i-1,j]$\;
+         $b[i,j]\gets$ ``$\uparrow$''\;
+       }
+       \Else{
+         $c[i,j]\gets c[i,j-1]$\;
+         $b[i,j]\gets$ ``$\downarrow$''\;
+      }    
+  }
+}
+ \Return $b$ y $c$\;
+ \caption{\textsc{LCS}($X,Y$), Complejidad:$O(nm)$}

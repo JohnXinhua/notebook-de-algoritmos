@@ -1,0 +1,28 @@
+  \Input{Un entero positivo $n$}
+  \Output{$True$ si $n$ es primo, $False$ de lo contrario.}
+
+  \BlankLine
+  \If{$n=1$}{
+    \Return False\;
+    }
+  \If{$n<4$}{
+    \Return True\;
+    }
+  \If{$n\mod{2}=0$}{
+    \Return False\;
+    }
+  \If{$n<9$}{
+    \Return True\;
+    }
+  \If{$n\mod{3}=0$}{
+    \Return False\;
+    }
+   $i \gets 5$\;
+   \While{$i\leq \lfloor \sqrt{n} \rfloor$}{
+     \If{$n\mod{i}=0$  \textbf{or} $n\mod{(i+2)}=0$}{
+       \Return False\;
+     }
+     $i\gets i+6$\;
+   }
+   \Return True\;
+   \caption{\textsc{Es-primo}($n$), Complejidad:$O(\sqrt{n})$}

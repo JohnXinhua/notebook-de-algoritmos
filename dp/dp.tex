@@ -1,0 +1,81 @@
+\begin{multicols}{2}
+\imagen{40mm}{./dp/subsequence}
+\subsection{Partici\'on balanceada}
+Dado un conjunto $A_1,\cdots A_n$ de $n$ enteros (en el rango $0\cdots k$)se quiere particionar en dos conjuntos $S_1$ y $S_2$ tales que se minimize $|Sum(S_1)-Sum(S_2)|$. Para resolverlo se define una funci\'on $ P : \{0,1,\cdots n\}\times \{0,1,\cdots nk\} \rightarrow \{0,1\} $ que:
+\[
+	P(i,j)= \left\{ \begin{array}{ll} 
+		1 & \mbox{Si un subconjunto de $\{A_1,A_2 \cdots A_i\}$ tiene}\\ & \mbox{una suma igual a $j$ }\\ 
+		0 & \mbox{De lo contrario} \end{array} \right.
+\]
+\[
+	P(i,j)= \left\{ \begin{array}{ll}
+		1 &  \mbox{Si $P(i-1,j)=1$ o si $P(i-1,j-A_i)=1$}\\ 
+		0 & \mbox{De lo contrario} \end{array} \right.
+\]
+Sea $S=\sum_{i=1}^nA_i/2$. Entonces el valor a conseguir con la recurrencia ser\'ia:
+\[
+	Min_{i\leq S}\{S-i:P(n,i)=1\}
+\]
+La suma de cada conjunto ser\'ia entonces $Sum(S_1)=i$ y $Sum(S_2)=2S-i$. Como la diferencia es $2S-2i=2(S-i)$ el valor objetivo es $2Min_{i\leq S}\{S-i:P(n,i)=1\}$. La complejidad es $O(n^2k)$.
+\subsection{Subsecuencia contigua m\'axima}
+Dado un arreglo de n\'umeros reales $A[1],A[2],\cdots,A[n]$, determinar una subsecuencia $A[i],\cdots,A[j]$ para la cual la suma de sus elementos es m\'aximizada.\\
+
+$M(i) =$ Suma m\'axima de las subsecuencias que terminan en $A[i]$.\\
+\[
+	M(i) = Max\left\{ \begin{array}{ll}
+		M(i-1) + A[i] & ( \mbox{Extiende la subsecuencia}\\ & \mbox{anterior})\\ 
+		A[i] & (\mbox{Empieza una nueva}\\ & \mbox{subsecuencia}) \end{array} \right.
+\]
+
+El valor m\'aximo es el mayor entre $M(1)\cdots M(n)$ ya que no sabemos en que casilla va a terminar la subsecuencia contigua m\'axima. La complejidad der\'a $O(n)$.
+
+\subsection{Problema del mochilero (The integer (0/1) knapsack problem, duplicate items forbidden)}
+Dados $n$ items, cada uno con tama\~no entero $S_i$ y un valor tambi\'en entero $V_i$ queremos conocer la forma de llenar (no necesariamente de forma exacta) una mochila de capacidad entera $C$ con un subconjunto de los items de forma que se maximize la sumatoria de sus valores.\\
+
+$M(i,j)=$ Valor \'optimo para llenar exactamente un mochilero de capacidad $j$ con alg\'un subconjunto de elementos $1\cdots i$.
+\[
+	M(i,j)=Max\left \{ \begin{array}{ll}
+		M(i-1,j) & (\mbox{Sin utilizar el}\\ & \mbox{$i$-\'esimo \'item})\\
+		M(i-1,j-S_i)+V_i & (\mbox{Utilizando el}\\ & \mbox{$i$-\'esimo \'item})\end{array}\right.
+\]
+
+El valor \'optimo objetivo es $Max(M(n,j))$ evaluado sobre todos los $j$s ($1,2\cdots C$) ya que no sabemos cual va a ser la capacidad exacta de la mochila \'optima. El algoritmo tendr\'a una complejidad de $O(nC)$.
+
+\subsection{M\'inima distancia de edici\'on}
+Dadas dos cadenas  $A[1,\cdots n]$ y $B[1,\cdots m]$ queremos saber el m\'inimo n\'umero de cambios necesarios para transformar $A$ en $B$. Los cambios que podemos hacer son: insertar un caracter, eliminar un caracter o reemplazar un caracter, cada uno con un costo $c_i,c_e$ y $c_r$ respectivamente.
+\[
+	M(i,j)= Min\left\{ \begin{array}{ll}
+		c_e+M(i-1,j)& \\
+		c_i+M(i,j-1)& \\
+	\left\{ \begin{array}{ll}
+		M(i-1,j-1)& \mbox{si $A[i]=B[j]$}\\
+		M(i-1,j-1)+c_r& \mbox{si $A[i]\neq B[j]$} \end{array} \right. \end{array} \right.
+\]
+\[M(0,0)=0\]
+\[M(i,0)=i\cdot c_e\]
+\[M(0,j)=j\cdot c_i\]
+La soluci\'on \'optima es $M(n,m)$ y el algoritmo tiene una complejidad de $O(nm)$.
+
+\subsection{Largest common subsequence (LCS)}
+En el problema de la subsecuencia com\'un m\'as larga nos dan dos secuencias $X=\langle x_1,x_2,\cdots,x_m\rangle$ y $Y=\langle y_1,y_2,\cdots,y_n\rangle$ y deseamos encontrar una subsecuencia com\'un de longitud m\'axima de $X$ y $Y$. \\
+
+Dada una secuencia $X=\langle x_1,x_2,\cdots,x_m\rangle$ definimos el $i$-esimo prefijo de $X$, para $i=0,1,\cdots,m$, como $X_i=\langle x_1,x_2,\cdots,x_i\rangle$.\\
+
+\textbf{Teorema: Subestructura \'optima de una LCS}
+
+Sean $X=\langle x_1,x_2,\cdots,x_m\rangle$ y $Y=\langle y_1,y_2,\cdots,y_n\rangle$ secuencias y sea $Z=\langle z_1,z_2,\cdots,z_k\rangle$ cualquier LCS de $X$ y $Y$:
+\begin{enumerate}
+	\item Si $x_m = y_n$, entonces $z_k=x_m=y_n$ y $Z_{k-1}$ es una LCS de $X_{m-1}$ y $Y_{n-1}$.
+	\item Si $x_m \neq y_n$, entonces $z_k\neq x_m$ implica que $Z$ es una LCS de $X_{m-1}$ y $Y$.
+	\item Si $x_m \neq y_n$, entonces $z_k\neq y_n$ implica que $Z$ es una LCS de $X_m$ y $Y_{n-1}$.
+\end{enumerate}
+Con esto se puede definir una soluci\'on recursiva. Sea $c[i,j]$ la longitud de una LCS de $X_i$ y $Y_j$. Entonces:
+\[
+	c[i,j]=\left \{ \begin{array}{ll}
+			0 & \mbox{si $i=0$ o $j=0$} \\
+			c[i-1,j-1]+1 & \mbox{si $i,j>0$ y $x_i=y_j$} \\
+	Max \left \{ \begin{array}{l} c[i,j-1] \\ c[i-1,j] \end{array} \right. & \mbox{si $i,j>0$ y $x_i\neq y_j$} \end{array} \right.
+\]
+\end{multicols}
+\algoritmo{./dp/al-LCS}
+\pagebreak
