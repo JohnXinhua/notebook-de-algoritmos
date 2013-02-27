@@ -32,7 +32,7 @@ el nombre de la sección y la ruta del archivo que describe la sección.
 algorithm2e y que tiene un parámetro: la ruta de un archivo que por convención 
 empieza por "al-".
 
-* "imagen": sirve para incluir f�cilmente imágenes y toma dos parámetros: el ancho y
+* "imagen": sirve para incluir fácilmente imágenes y toma dos parámetros: el ancho y
 la ruta de la imágen.
 
 ___
