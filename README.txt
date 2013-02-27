@@ -1,14 +1,13 @@
-Este trabajo se encuentra bajo una Licencia Creative Commons Atribución-NoComercial 2.5 Colombia.
+Notebook de maratones de programaciï¿½n
+======================================
 
-Notebook de maratones de programación
-Autor: Miguel Vilá
-Correo: miguelvilag en gmail
+Hecho por [Miguel VilÃ¡][https://twitter.com/_miguel_v]
 
-Descripción: Este es un documento en LaTex con algoritmos y algunos teoremas útiles
-para competencias de programación de la ACM. Incluye algunos algoritmos comunes en 
-pseudocódigo y algunas implementaciones en Java.
+Descripciï¿½n: Este es un documento en LaTex con algoritmos y algunos teoremas ï¿½tiles
+para competencias de programaciï¿½n de la ACM. Incluye algunos algoritmos comunes en 
+pseudocï¿½digo y algunas implementaciones en Java.
 
-El Notebook está organizado a partir del archivo "Notebook.tex" desde el que se hace 
+El Notebook estï¿½ organizado a partir del archivo "Notebook.tex" desde el que se hace 
 referencia a otros archivos donde se encuentra el contenido de cada una de las secciones.
 
 Hace uso de los siguientes paquetes:
@@ -25,14 +24,16 @@ Hace uso de los siguientes paquetes:
 
 Se definen nuevos comandos como:
 
-* "seccion": sirve para definir una nueva sección del documento y tiene dos parámetros: 
-el nombre de la sección y la ruta del archivo que describe la sección.
+* "seccion": sirve para definir una nueva secciï¿½n del documento y tiene dos parï¿½metros: 
+el nombre de la secciï¿½n y la ruta del archivo que describe la secciï¿½n.
 
 * "algoritmo": sirve para decribir un algoritmo en el formato de la libreria 
-algorithm2e y que tiene un parámetro: la ruta de un archivo que por convención 
+algorithm2e y que tiene un parï¿½metro: la ruta de un archivo que por convenciï¿½n 
 empieza por "al-".
 
-* "imagen": sirve para incluir fácilmente imágenes y toma dos parámetros: el ancho y
-la ruta de la imágen.
+* "imagen": sirve para incluir fï¿½cilmente imï¿½genes y toma dos parï¿½metros: el ancho y
+la ruta de la imï¿½gen.
 
-Una versión compilada se encuentra en el archivo "Notebook.pdf".
+Una versiï¿½n compilada se encuentra en el archivo "Notebook.pdf".
+
+Este trabajo se encuentra bajo una Licencia Creative Commons Atribuciï¿½n-NoComercial 2.5 Colombia.
