@@ -37,7 +37,7 @@ la ruta de la imágen.
 
 ___
 
-Una versión compilada se encuentra en el archivo ["Notebook.pdf"][https://github.com/miguel-vila/notebook-de-algoritmos/blob/master/Notebook.pdf?raw=true].
+Una versión compilada se encuentra en el archivo ["Notebook.pdf"](https://github.com/miguel-vila/notebook-de-algoritmos/blob/master/Notebook.pdf?raw=true).
 
 ___
 
